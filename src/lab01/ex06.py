@@ -1,13 +1,13 @@
-x = int(input())
-files = 0
+x = int(input('in_1: '))
+fil = 1
 Tr = 0
 Fa = 0
 for files in range(x):
-    files+=1
-    memory = (input(f'in_{files}: '))
+    fil+=1
+    memory = (input(f'in_{fil}: '))
     if str(memory).split()[-1] == 'True':
         Tr+=1
     else:
         Fa +=1
-print(Tr, Fa)
+print('out:',Tr, Fa)
 

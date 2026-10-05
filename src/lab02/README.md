@@ -138,7 +138,7 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
 
 Реализована работа с записями студентов в виде кортежа
 
-###Часть кода:
+### Часть кода:
 
 ```python
 def format_record(rec: tuple[str, str, float]) -> str:
@@ -172,6 +172,6 @@ def format_record(rec: tuple[str, str, float]) -> str:
         return(f'{surname} {inits},гр. {group},GPA{gpa: .2f}')
 ```
 
-### Пример запуска col_sums:
+### Пример запуска:
 
 ![ ](../../images/lab02/ex03.png)

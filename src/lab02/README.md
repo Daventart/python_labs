@@ -10,6 +10,7 @@
 
 ### Код под min_max:
 
+```python
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     if not nums:
         raise ValueError("список пуст")
@@ -21,10 +22,48 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
         if numbers > high:
             high = numbers
     return (low, high)
+```
 
 ### Пример запуска min_max:
 
-![ ](../../images\lab02\ex01(test.min_max).png)
+![ ](../../images/lab02/ex01(test.min_max).png)
+
+### Код под unique_sorted:
+
+```python
+def unique_sorted(nums: list[float | int]) -> list[float | int]:
+    items = list(set(nums))
+    for i in range(1, len(items)):
+        key = items[i]
+        j = i - 1
+        while j >= 0 and items[j] > key:
+            items[j + 1] = items[j]
+            j -= 1
+        items[j + 1] = key
+    return items
+```
+
+### Пример запуска unique_sorted:
+
+![ ](../../images/lab02/ex01(test.unique_sorted).png)
+
+### Код под flatten:
+
+```python
+def flatten(mat: list[list | tuple]) -> list:
+    a = []
+    for row in mat:
+        if type(row) != list and type(row) != tuple:
+            raise TypeError("Строка должна быть списком или кортежем")
+        for x in row:
+            a.append(x)
+    return a
+```
+
+### Пример запуска flatten:
+
+![ ](../../images/lab02/ex01(test.flatten).png)
+
 
 ## Задание 2
 

@@ -65,27 +65,113 @@ def flatten(mat: list[list | tuple]) -> list:
 ![ ](../../images/lab02/ex01(test.flatten).png)
 
 
-## Задание 2
+## Задание 2 - matrix.py
 
-![]( )
-![Аналогично первому но теперь производим вычисления над переменными](../../images/lab01/ex02.png)
+Реализованы следующие функции:
+check_matrix - проверяет что матрица прямоугольная (вспомогательная функция)
+transpose - транспонирует матрицу
+row_sums - возвращает суммы элементов каждой строки
+col_sums - возвращает суммы элементов каждого столбца
 
-## Задание 3
+Все функции работают с прямоугольными матрицами. Если строки имеют разную длину, вызывается ValueError
 
-![Взаимодействие с переменными и оставление только 2 знаков после , ](../../images/lab01/ex03.png)
+### Код под transpose:
 
-## Задание 4
+```python
+def transpose(mat: list[list[float | int]]) -> list[list]:
+    check_matrix(mat)
+    if len(mat) == 0:
+        return []
+    
+    res = []
+    for j in range(len(mat[0])):
+        row = []
+        for i in range(len(mat)):
+            row.append(mat[i][j])
+        res.append(row)
+    return res
+```
 
-![Разделение числа на целое и остаток](../../images/lab01/ex04.png)
+### Пример запуска transpose:
 
-## Задание 5
+![ ](../../images/lab02/ex02(transpose).png)
 
-![Нахождение верхнего регистра через isupper и удаление пробелов через комбинацию split и join](../../images/lab01/ex05.png)
 
-## Задание 6
+### Код под row_sums:
 
-![Перебор участников через цикл и проверка их присутвия](../../images/lab01/ex06.png)
+```python
+def row_sums(mat: list[list[float | int]]) -> list[float]:
+    check_matrix(mat)
+    res = []
+    for row in mat:
+        s = 0
+        for x in row:
+            s += x
+        res.append(s)
+    return res
+```
 
-## Задание 7
+### Пример запуска row_sums:
 
-![Расшифровка кода через 2 чекера и последующий цикл который берет буквы через интервал соответсвующий](../../images/lab01/ex07.png)
+![ ](../../images/lab02/ex02(row_sums).png)
+
+
+### Код под col_sums:
+
+```python
+def col_sums(mat: list[list[float | int]]) -> list[float]:
+    check_matrix(mat)
+    res = []
+    for j in range(len(mat[0])):
+        s = 0
+        for i in range(len(mat)):
+            s += mat[i][j]
+        res.append(s)
+    return res
+```
+
+### Пример запуска col_sums:
+
+![ ](../../images/lab02/ex02(col_sums).png)
+
+## Задание 3 - tuples.py
+
+Реализована работа с записями студентов в виде кортежа
+
+###Часть кода:
+
+```python
+def format_record(rec: tuple[str, str, float]) -> str:
+        
+        if type(rec) != tuple:
+                raise TypeError('Запись обязана быть кортежем')
+        if len(rec) != 3:
+                raise ValueError('Недостаточно данных или перебор')
+        
+        fio, group, gpa = rec
+        parts = fio.split()
+        group = group.strip()
+
+        if type(fio)!= str or type(group) != str:
+                raise TypeError('ФИО и Группа - не строки')
+        if type(gpa) != int and type(gpa) != float:
+                raise TypeError('GPA обязан быть числовым значением')
+        if gpa < 0 or gpa > 5:
+               raise ValueError('GPA не в нужном диапазоне')
+        if len(parts) != 2 and len(parts) != 3:
+                raise ValueError('Мало данных в имени')
+        if group == "":
+            raise ValueError("Группа пустая")
+        
+        surname = parts[0].capitalize()
+        inits = ''
+        for i in range(1, len(parts)):
+               if i > 2:
+                      break
+               inits += parts[i][0].upper() + '.'
+        return(f'{surname} {inits},гр. {group},GPA{gpa: .2f}')
+```
+
+### Пример запуска col_sums:
+
+![ ](../../images/lab02/ex03.png)

@@ -8,7 +8,7 @@ from lib.text import normalize, tokenize, count_freq, top_n
 
 def main() -> None:
     sys.stdin.reconfigure(encoding="utf-8")
-    raw_text = sys.stdin.read()
+    raw_text = sys.stdin.read()  
 
     tokens = tokenize(normalize(raw_text))
     freq = count_freq(tokens)
@@ -22,3 +22,16 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+#Set-Alias python "C:\Users\alexl\.local\bin\python3.14.exe"
+#[Console]::InputEncoding = [Text.Encoding]::UTF8
+#$OutputEncoding = [Text.Encoding]::UTF8
+#echo "Привет, мир! Привет!!!" | python src/lab03/text_stats.py

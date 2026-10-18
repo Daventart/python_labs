@@ -8,10 +8,10 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     text = ' '.join(text.split())
 
     return text
-#print(f'normalize("ПрИвЕт\nМИр\t") ->', normalize("ПрИвЕт\nМИр\t"))
-#print(f'normalize("ёжик, Ёлка" (yo2e=True)) ->', normalize("ёжик, Ёлка", yo2e=True))
-#print(f'normalize("Hello\r\nWorld") ->', normalize("Hello\r\nWorld"))
-#print(f'normalize("  двойные   пробелы  ") ->', normalize("  двойные   пробелы  "))
+# print(f'normalize("ПрИвЕт\nМИр\t") ->', normalize("ПрИвЕт\nМИр\t"))
+# print(f'normalize("ёжик, Ёлка" (yo2e=True)) ->', normalize("ёжик, Ёлка", yo2e=True))
+# print(f'normalize("Hello\r\nWorld") ->', normalize("Hello\r\nWorld"))
+# print(f'normalize("  двойные   пробелы  ") ->', normalize("  двойные   пробелы  "))
 
 import re
 def tokenize(text: str) -> list[str]:

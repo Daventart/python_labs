@@ -92,7 +92,7 @@ python src/lab04/text_report.py
 python src/lab04/text_report.py --in data/lab04/cp1251.txt
 ```
 #### Кодировка cp1251
- ![alt text](../../images/lab04/2_encode_1251.png)
+![](../../images/lab04/finalEncoding.png)
 
 ## Запуск несуществующего файла
 ```bash

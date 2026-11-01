@@ -26,7 +26,6 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
             raise ValueError('Пустой JSON или неподдерживаю структуру')
         if not all(isinstance(item, dict) for item in data):
             raise ValueError('Все элементы Json списка должны быть словарями')
-
         fieldnames: list[str] = []
         for item in data:
             for key in item:
@@ -64,7 +63,7 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     with dst.open("w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=2)
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     json_to_csv("data/samples/people.json", "data/out/people_from_json.csv")
     csv_to_json("data/samples/people.csv", "data/out/people_from_csv.json")
     print("JSON -> CSV и CSV -> JSON: готово")

@@ -1,5 +1,3 @@
-"""Конвертация CSV -> XLSX."""
-
 import csv
 from pathlib import Path
 
@@ -10,7 +8,7 @@ from src.lib.io_helpers import ensure_parent_dir
 
 
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
-    
+
     src = Path(csv_path)
     dst = Path(xlsx_path)
 

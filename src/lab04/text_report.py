@@ -54,7 +54,7 @@ def main() -> None:
 
     write_csv(sorted_word_counts(freq), args.output_path, header=("word", "count"))
 
-    print(f"Всего слов: {len(tokens)}")
+    print(f"Всего слов: {len(tokens)}") 
     print(f"Уникальных слов: {len(freq)}")
     print("Топ-5:")
     for word, count in top_n(freq, n=5):

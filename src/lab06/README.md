@@ -179,12 +179,12 @@ python -m src.lab06.cli_convert csv2xlsx --in data/samples/people.csv --out data
 #### help на все
 ![](../../images/lab06/allCLICONV.png)
 
-#### help на с2j
+#### help на сsv2json
 ![](../../images/lab06/CLICONVc2j.png)
 
-#### help на j2c
+#### help на json2csv
 
 ![](../../images/lab06/CLICONVj2c.png)
 
-#### help на c2x
+#### help на csv2xlsx
 ![](../../images/lab06/CLICONVc2x.png)
